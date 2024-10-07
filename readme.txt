@@ -32,4 +32,5 @@ Se debe desplegar el resultado en Github
  Debe ser responsive
 
 Librerias:
-	GSAP-Animacioness
+	GSAP-Animaciones
+	.
