@@ -1,0 +1,39 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+    background-color: #a25267;
+}
+
+form{
+    display: flex;
+    padding: 32px;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+}
+
+.loginInput{
+    border:none;
+    box-sizing: border-box;
+    padding: 31px 8px 15px;
+    outline: none;
+    display: block;
+
+}
+
+#btn{
+    padding: 20px;
+    transition: .1s;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#btn:hover{
+    background-color: aliceblue;
+}
+
+#btn:active{
+    outline: #aaaaaa 4px solid;
+    background-color: #cccccc;
+}

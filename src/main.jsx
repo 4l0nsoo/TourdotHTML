@@ -4,12 +4,13 @@ import {createBrowserRouter,RouterProvider} from "react-router-dom";
 import App from './App.jsx'
 import Blog from './components/Tblog.jsx'
 import Error from './components/Error.jsx'
+import Login from './components/loginForm.jsx'
 import './index.css'
 
 const router = createBrowserRouter([
     {path: "/", element: <App/>, errorElement:<Error/>},
     {path: '/blog', element: <Blog/>, errorElement:<Error/>},
-    {errorElement: <div>ERROR 404 / / / NOT FOUND</div>},
+    {path: '/login', element: <Login/>, errorElement: <Error/>},
 ]);
 
 
