@@ -19,21 +19,25 @@ form{
     padding: 31px 8px 15px;
     outline: none;
     display: block;
-
+    border-radius: 2px;
 }
 
 #btn{
     padding: 20px;
     transition: .1s;
     box-sizing: border-box;
+    border: transparent 2px solid;
     cursor: pointer;
+    border-radius: 6px;
 }
 
 #btn:hover{
+    box-sizing: border-box;
     background-color: aliceblue;
+    border: #aaaaaa 2px solid;
+
 }
 
 #btn:active{
-    outline: #aaaaaa 4px solid;
     background-color: #cccccc;
 }
