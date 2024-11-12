@@ -1,6 +1,7 @@
 .formContainer{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #a25267;
 }
 
@@ -40,4 +41,14 @@ form{
 
 #btn:active{
     background-color: #cccccc;
+}
+
+.registerLink{
+    color: #dddddd;
+    text-decoration: none;
+
+}
+
+.registerLink:hover{
+    color: #ffffff;
 }
