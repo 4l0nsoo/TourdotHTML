@@ -2,12 +2,14 @@ import React from 'react'
 import NavBar from './navBar'
 import { useState, useEffect } from 'react'
 import { supabase } from "../supabase/client.js"
+import { useNavigate } from 'react-router-dom'
 import './styles/loginForm.css'
 
 function signUpForm() {
 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ function signUpForm() {
       password: pass,
     })
     console.log(result)
+    navigate("/")
     }catch (error){
       console.log(error)
     }

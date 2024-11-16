@@ -1,8 +1,18 @@
+h2{
+    color: #ffffff;
+}
+
 .formContainer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #a25267;
+    background-color: #f4a474;
+    border-radius: 4px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 form{
@@ -10,7 +20,7 @@ form{
     padding: 32px;
     justify-content: space-around;
     flex-direction: column;
-    width: 50vw;
+    width: 30vw;
     height: 50vh;
 }
 
@@ -21,6 +31,10 @@ form{
     outline: none;
     display: block;
     border-radius: 2px;
+}
+
+.loginInput::placeholder{
+    font-size: 16px;
 }
 
 #btn{
@@ -46,9 +60,17 @@ form{
 .registerLink{
     color: #dddddd;
     text-decoration: none;
-
+    font-weight: 600;
 }
 
 .registerLink:hover{
     color: #ffffff;
+}
+
+@media (max-width: 1250px){
+    form{
+       width: 80vw; 
+       height: 40vh;
+       padding:20px 10px;
+    }
 }
