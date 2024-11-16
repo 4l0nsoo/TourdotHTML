@@ -28,8 +28,9 @@ function navBar() {
           <Link to='/' className='nav-elmnt'><img src={Logo} alt="Logoimg" /></Link>
           <Link to='/blog' className='nav-elmnt'>Blog</Link>
           {isLogged ? (
-            <Link to='/login' className='nav-elmnt'>Login</Link>) : (
-            <button onClick={supabase.auth.signOut}>Cerrar Sesión</button>)
+            <button onClick={() => supabase.auth.signOut()}>Cerrar Sesión</button>
+            ) : (
+              <Link to='/login' className='nav-elmnt'>Login</Link>)
           }
         </nav>
       </header>
