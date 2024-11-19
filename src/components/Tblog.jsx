@@ -1,15 +1,15 @@
 import React from 'react'
-import NavBar from './navBar'
+import NavBar from './NavBar'
 import { Api } from '../Api'
+import { Link } from 'react-router-dom'
 
 function Tblog() {
-  const {data} = Api("blogs")
-
-  console.log(data)
 
   return (
     <>
     <NavBar/>
+
+    <Link to='/create-post'>Crear Post</Link>
 
     <div>
       <img src="" alt="" />

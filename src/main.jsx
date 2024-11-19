@@ -5,7 +5,9 @@ import App from './App.jsx'
 import Blog from './components/Tblog.jsx'
 import Error from './components/Error.jsx'
 import Login from './components/loginForm.jsx'
-import SignUp from './components/signUpForm.jsx'
+import SignUp from './components/SignUpForm.jsx'
+import CreatePost from './components/CreatePost.jsx';
+import {AuthProvider} from './components/hooks/UserContext'
 import './index.css'
 
 const router = createHashRouter([
@@ -13,11 +15,14 @@ const router = createHashRouter([
     {path: '/blog', element: <Blog/>, errorElement:<Error/>},
     {path: '/login', element: <Login/>, errorElement: <Error/>},
     {path: '/signup', element: <SignUp/>, errorElement: <Error/>},
+    {path: '/create-post', element: <CreatePost/>, errorElement: <Error/>},
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <AuthProvider>
+      <RouterProvider router={router}/>
+    </AuthProvider>
   </StrictMode>
 )

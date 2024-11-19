@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './navBar'
+import NavBar from './NavBar.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { supabase } from "../supabase/client.js"

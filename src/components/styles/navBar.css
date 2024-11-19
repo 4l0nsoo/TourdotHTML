@@ -31,8 +31,9 @@
 .nav-elmnt > img{
     padding: 0px;
     width: 50px;
+    background-size: cover;
 }
 
 .nav-elmnt:hover{
-    background-color: #d4cdc6;
+    background-color: #ee9c6a;
 }

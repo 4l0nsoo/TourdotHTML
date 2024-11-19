@@ -4,22 +4,11 @@ import { Link } from 'react-router-dom'
 import './styles/navBar.css'
 import Logo from "../assets/Logov3SinFondo.png"
 import { supabase } from '../supabase/client'
+import {useAuth} from './hooks/UserContext'
 
 function navBar() {
 
-  const [isLogged, setisLogged] = useState(false)
-
-  useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      setisLogged(!!session); // Marca true si session existe, de lo contrario false
-      console.log(session);
-    });
-  
-    // Limpia el listener al desmontar el componente
-    return () => {
-      data.subscription.unsubscribe();
-    };
-  }, []);
+   const {isLogged} = useAuth()
 
   return (
     <>
