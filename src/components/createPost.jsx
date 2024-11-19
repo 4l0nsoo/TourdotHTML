@@ -4,17 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import {useAuth} from './hooks/UserContext';
 
-
-
 function createPost() {
 
   const {isLogged} = useAuth()
+  const {session} = useAuth()
   const navigate = useNavigate()
-  console.log(isLogged)
 
   useEffect(() => {
       if(!isLogged){
-        console.log('se ejecuto el if')
         navigate('/login')}
   }, []);
 
@@ -24,11 +21,11 @@ function createPost() {
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    const allowedTypes = ["image/png", "image/jpeg"]; // Solo PNG y JPG
+    const allowedTypes = ["image/png", "image/jpeg"]; 
 
     if (selectedFile && allowedTypes.includes(selectedFile.type)) {
       setFile(selectedFile);
-      setPreviewUrl(URL.createObjectURL(selectedFile)); // Vista previa
+      setPreviewUrl(URL.createObjectURL(selectedFile));
       setError("");
     } else {
       setError("Por favor, selecciona un archivo .png o .jpg");
@@ -36,22 +33,51 @@ function createPost() {
     }
   };
 
-  const handleUpload = async () =>{
-    if(!file){
+
+  const handleSubmit = async (e) => {  
+      e.preventDefault();
+
+      if(!file){
       alert("No hay archivo seleccionado")
       return
     }
 
-    const fileName = `${Date.now()}-${file.name}`
+    const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
     
     try {
-      const {data, error} = supabase.storage
+      const {data: uploadData, error: uploadError} = await supabase.storage
       .from("posts_img")
       .upload(fileName, file)
-      
-    } catch (error) {
-      
+
+      if (uploadError) {
+        console.error("Error al subir el archivo:", uploadError);
+        alert("Hubo un problema al subir el archivo.");
+        return;
+      }
+
+      const publicURL = `https://ivyuqxwqemrydiloezmx.supabase.co/storage/v1/object/public/posts_img/${fileName}`;
+
+    const {data: insertData, error: insertError} = await supabase.
+    from("posts").
+    insert({
+      title:title,
+      description:desc,
+      img_url:publicURL
+    });
+
+    if (insertError) {
+      console.error("Error al insertar en la tabla:", insertError);
+      alert("Hubo un problema al guardar los datos.");
+      return;
     }
+
+    alert('se enviaron correctamente los datos')
+
+    } catch (error) {
+      console.log("ha ocurrido un error:", error)
+    }
+
+    
 
   }
 
@@ -66,7 +92,7 @@ function createPost() {
     <div>
       <NavBar/>
         <div>
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <input type="text" placeholder='titulo' onChange={(e) => setTitle(e.target.value)}/>
                 <input type="file" placeholder='sube la foto del sitio' onChange={handleFileChange} />
                 <textarea name="" id="" placeholder='descripcion del sitio' onChange={(e) => setDesc(e.target.value)} ></textarea>

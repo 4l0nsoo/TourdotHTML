@@ -4,22 +4,37 @@ import { useState, useEffect } from 'react'
 import { supabase } from "../supabase/client.js"
 import { useNavigate } from 'react-router-dom'
 import './styles/loginForm.css'
+import { useAuth } from './hooks/UserContext.jsx'
 
 function signUpForm() {
 
+  const {isLogged} = useAuth()
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [user, setUser] = useState("")
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    if(isLogged){
+      navigate('/')}
+}, []);
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try{
-    console.log(email,pass)
     const result = await supabase.auth.signUp({
       email,
       password: pass,
     })
-    console.log(result)
+
+    const {data} = supabase.
+      from('user_data').
+      insert({
+        username:user,
+        email
+      });
+
     navigate("/")
     }catch (error){
       console.log(error)
@@ -31,7 +46,8 @@ function signUpForm() {
       <NavBar/>
       <div className='formContainer'>
         <form onSubmit={HandleSubmit}>
-          <input type="text" name="" id="user" placeholder='Nombre de Usuario' className='loginInput' required />
+          <input type="text" name="" id="user" placeholder='Nombre de Usuario' className='loginInput' required
+           onChange={(e)=> setUser(e.target.value)} />
           <input type="email" name="" id="email" placeholder='Correo Electrónico' className='loginInput' required
             onChange={(e)=> setEmail(e.target.value)}  />
           <input type="password" name="" id="pass" placeholder='Contraseña' className='loginInput' required

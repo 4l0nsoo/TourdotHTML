@@ -1,16 +1,23 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import NavBar from './NavBar.jsx'
 import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import { supabase } from "../supabase/client.js"
 import './styles/loginForm.css'
+import { useAuth } from './hooks/UserContext.jsx'
 
 function loginForm() {
 
+  const {isLogged} = useAuth()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(isLogged){
+      navigate('/')}
+}, []);
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,8 +28,7 @@ function loginForm() {
         email,
         password,
       });
-  
-      console.log('Inicio de sesión exitoso:', data); 
+      alert("Inicio de sesion Exitoso!")
       navigate("/")
       
     } catch (error) {

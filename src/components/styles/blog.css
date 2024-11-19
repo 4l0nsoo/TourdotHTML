@@ -1,0 +1,22 @@
+#bigContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 25%;
+    align-items: center;
+
+}
+
+#postContainer{
+    border: 1px solid #444;
+}
+
+#postImg{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.postElmnt{
+    color: #222;
+}
