@@ -1,0 +1,143 @@
+#head{
+    display: block;
+    text-align: center;
+    height: 80vh;
+    background-color: #f4a676;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    text-align: center;
+}
+
+#headImg{
+    object-fit: cover;
+}
+
+.h2{
+    color: #222;
+    padding: 5% 0;
+    text-align: center;
+}
+
+.xmplPostCont{
+    display: flex;
+    text-align: center;
+}
+
+.xmplPost{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    margin:10% 10% 10% 2%;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: rotate(20deg);
+}
+
+.xmplPost:nth-child(2){
+    transform: rotate(-10deg);
+}
+
+.xmplPost:last-child{
+    transform: rotate(30deg);
+}
+
+.xmplPost>img{
+    width: 200px;
+    border-bottom: 1px solid #777;
+    padding: 20px 5px 20px;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.xmplPost>p{
+    padding: 20px 20px 25px;
+}
+
+.opinionCont{
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+
+.opinionCont>p{
+    align-self: center;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.opinion{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    border: #222 solid 1px;
+    border-radius: 5px;
+    width: 30%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.opinion>p{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    
+}
+
+span{
+    align-self: flex-start;
+}
+
+#avatarSpan{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+#avatarSpan>p{
+    padding-left: 15px;
+}
+
+#svgHeart{
+    fill: rgb(240, 73, 73);
+    stroke: #222;
+}
+
+#svgAvatar{
+    stroke: #304494;
+}
+
+.btnCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blogButton{
+    padding: 12px 40px;
+    background-color:#fff;
+    color: #17337a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    border: #17337a solid 4px;
+    border-radius: 30px;
+    margin-bottom: 5%;
+    transition: .5s;
+}
+
+.blogButton:hover{
+    background-color: #17337a;
+    color: #fff;
+}
+
+
+@media (max-width: 1024px){
+    #headImg{
+        width: 300px;
+    }
+}

@@ -8,7 +8,14 @@
 }
 
 #postContainer{
-    border: 1px solid #444;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    margin:10% 10% 10% 2%;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #postImg{

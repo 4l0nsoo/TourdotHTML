@@ -1,7 +1,7 @@
 .nav-container{
     display: flex;
     justify-content: space-between;
-    background-color: #f4a474;
+    background-color: #f4a676;
     padding: 10px 35px;
     align-items: center;
     max-height: 8vh;
@@ -26,6 +26,12 @@
 
 .nav-elmnt:first-child:hover{
     background-color: transparent;
+}
+
+button{
+    border: none;
+    background-color: #f4a474;
+    cursor: pointer;
 }
 
 .nav-elmnt > img{
