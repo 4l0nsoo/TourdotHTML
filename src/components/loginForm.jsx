@@ -24,15 +24,19 @@ function loginForm() {
     setError(null);
   
     try {
-      const { data } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
+      if(error){
+        alert('Inicio de sesion fallido')
+      } else{
       alert("Inicio de sesion Exitoso!")
-      navigate("/")
+      navigate("/")}
       
     } catch (error) {
       setError(error.message);
+      console.log(error)
     }
   };
 
@@ -48,7 +52,7 @@ function loginForm() {
             onChange={(e) => setEmail(e.target.value)} />
           <input type="password" name="" id="password" className='loginInput' placeholder='Contraseña'
             onChange={(e) => setPassword(e.target.value)} />
-          <button className='loginInput'>Enviar</button>
+          <button className='loginInput' id='button'>Enviar</button>
         </form>
         <Link to="/signup" className='registerLink'>Registrarse</Link>
       </div>

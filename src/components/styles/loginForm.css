@@ -13,6 +13,7 @@ h2{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 form{
@@ -31,6 +32,13 @@ form{
     outline: none;
     display: block;
     border-radius: 2px;
+}
+
+#button{
+    border:#fff solid 2px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .loginInput::placeholder{

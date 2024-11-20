@@ -7,14 +7,14 @@ import "./styles/createPost.css"
 
 function createPost() {
 
-  const {isLogged} = useAuth()
-  const {session} = useAuth()
-  const navigate = useNavigate()
+  // const {isLogged} = useAuth()
+  // const {session} = useAuth()
+  // const navigate = useNavigate()
 
-  useEffect(() => {
-      if(!isLogged){
-        navigate('/login')}
-  }, []);
+  // useEffect(() => {
+  //     if(!isLogged){
+  //       navigate('/login')}
+  // }, []);
 
   const [title, setTitle] = useState()
   const [file, setFile] = useState()

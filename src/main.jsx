@@ -8,14 +8,15 @@ import Login from './components/loginForm.jsx'
 import SignUp from './components/SignUpForm.jsx'
 import CreatePost from './components/CreatePost.jsx';
 import {AuthProvider} from './components/hooks/UserContext'
+import ProtectedRoute from './components/hooks/ProtectedRoutes.jsx';
 import './index.css'
 
 const router = createHashRouter([
     {path: "/", element: <App/>, errorElement:<Error/>},
     {path: '/blog', element: <Blog/>, errorElement:<Error/>},
-    {path: '/login', element: <Login/>, errorElement: <Error/>},
-    {path: '/signup', element: <SignUp/>, errorElement: <Error/>},
-    {path: '/create-post', element: <CreatePost/>, errorElement: <Error/>},
+    {path: '/login', element: <ProtectedRoute><Login/></ProtectedRoute>, errorElement: <Error/>},
+    {path: '/signup', element: <ProtectedRoute><SignUp/></ProtectedRoute>, errorElement: <Error/>},
+    {path: '/create-post', element: <ProtectedRoute><CreatePost/></ProtectedRoute>, errorElement: <Error/>},
 ]);
 
 

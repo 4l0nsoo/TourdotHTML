@@ -7,11 +7,14 @@ export const AuthProvider = ({children}) =>{
   const [isLogged, setIsLogged] = useState(false)
   const [session, setSession] = useState(null)
 
-  useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+  const fetchSession = async () =>{
+    const { data } = await supabase.auth.onAuthStateChange((event, session) => {
       setIsLogged(!!session);
       setSession(session);
-    });
+    });}
+
+  useEffect(() => {
+    fetchSession()
   
     return () => {
       if (data && data.subscription) {
@@ -19,6 +22,9 @@ export const AuthProvider = ({children}) =>{
       }
   };
   }, []);
+
+
+
   return (
     <AuthContext.Provider value={{ isLogged, session}}>
       {children}
