@@ -15,7 +15,7 @@ const router = createHashRouter([
     {path: "/", element: <App/>, errorElement:<Error/>},
     {path: '/blog', element: <Blog/>, errorElement:<Error/>},
     {path: '/login', element: <Login/>, errorElement: <Error/>},
-    {path: '/signup', element: <ProtectedRoute><SignUp/></ProtectedRoute>, errorElement: <Error/>},
+    {path: '/signup', element: <SignUp/>, errorElement: <Error/>},
     {path: '/create-post', element: <ProtectedRoute><CreatePost/></ProtectedRoute>, errorElement: <Error/>},
 ]);
 
