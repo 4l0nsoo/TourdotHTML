@@ -1,0 +1,56 @@
+.formCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.formElm{
+    padding: 13px 30px;
+    border:none;
+    border-bottom: #dd915f solid 2px;
+}
+
+.formElm:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+#uploadFile{display: none;}
+
+#uploadBtn{
+    padding: 10px 30px;
+    background-color: #17337a;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 600;
+    align-self: self-start;
+    cursor: pointer;
+}
+
+
+.formElm::placeholder{
+    font-size: 15px;
+    font-family: "Poppins";
+}
+
+button{
+    padding: 20px 40px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: "Poppins";
+    font-weight: 600;
+    background-color: #f4a676;
+    width: 150px;
+    align-self: center;
+}
+
+button:hover{
+    background-color: #dd915f;
+}

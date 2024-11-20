@@ -4,7 +4,7 @@
     background-color: #f4a676;
     padding: 10px 35px;
     align-items: center;
-    max-height: 8vh;
+    max-height: 9vh;
 }
 
 .nav-elmnt{
@@ -36,10 +36,20 @@ button{
 
 .nav-elmnt > img{
     padding: 0px;
-    width: 50px;
+    width: 60px;
     background-size: cover;
 }
 
 .nav-elmnt:hover{
     background-color: #ee9c6a;
+}
+
+@media(max-width:1250px){
+    .nav-container{
+        width: 100vw;
+    }
+
+    .nav-elmnt{
+        font-weight: 500;
+    }
 }

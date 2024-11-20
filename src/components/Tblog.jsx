@@ -40,9 +40,10 @@ function Tblog() {
   return (
     <>
       <NavBar />
-
-      <Link to='/create-post'>Crear Post</Link>
-
+      
+      <div className='btnCont'>
+      <Link to='/create-post' className='creatBtn'>Crear Post <div> +</div></Link>
+      </div>
       <div id='bigContainer'>
         {posts.map((post) => (
           <div key={post.id} id='postContainer'>

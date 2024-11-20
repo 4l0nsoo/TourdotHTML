@@ -73,4 +73,8 @@ form{
        height: 40vh;
        padding:20px 10px;
     }
+
+    .loginInput{
+        padding: 15px 8px ;
+    }
 }

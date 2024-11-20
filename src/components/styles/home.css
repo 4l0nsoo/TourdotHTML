@@ -77,8 +77,9 @@ section{
     flex-direction: column;
     padding: 10px 20px;
     border: #222 solid 1px;
+    margin: 10px 3%;
+    flex:1;
     border-radius: 5px;
-    width: 30%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
@@ -137,6 +138,21 @@ span{
 
 
 @media (max-width: 1024px){
+    .xmplPost:nth-child(2){
+        display: none;
+    }
+    .xmplPost:last-child{
+        display: none;
+    }
+
+    .opinion:nth-child(2){
+        display: none;
+    }
+
+    .opinion:last-child{
+        display: none;
+    }
+
     #headImg{
         width: 300px;
     }

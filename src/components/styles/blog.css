@@ -7,13 +7,38 @@
 
 }
 
+.btnCont{
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5%;
+}
+
+.creatBtn{
+    display: flex;
+    padding: 12px 40px;
+    background-color:#fff;
+    color: #17337a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    border: #17337a solid 4px;
+    border-radius: 30px;
+    margin-bottom: 5%;
+    transition: .5s;
+}
+
+.creatBtn:hover{
+    background-color: #17337a;
+    color: #fff;
+}
+
 #postContainer{
     display: flex;
     flex:1;
     flex-direction: column;
-    margin:10% 10% 10% 2%;
+    margin: 5% 0;
     align-items: center;
-    padding: 10px 20px;
+    padding: 30px 60px;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

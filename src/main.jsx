@@ -20,9 +20,11 @@ const router = createHashRouter([
 
 
 createRoot(document.getElementById('root')).render(
+  <AuthProvider>
   <StrictMode>
-    <AuthProvider>
+    
       <RouterProvider router={router}/>
-    </AuthProvider>
+
   </StrictMode>
+      </AuthProvider>
 )

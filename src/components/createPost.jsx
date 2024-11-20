@@ -3,6 +3,7 @@ import { supabase } from '../supabase/client';
 import { useNavigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import {useAuth} from './hooks/UserContext';
+import "./styles/createPost.css"
 
 function createPost() {
 
@@ -91,12 +92,13 @@ function createPost() {
   return (
     <div>
       <NavBar/>
-        <div>
+        <div className='formCont'>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='titulo' onChange={(e) => setTitle(e.target.value)}/>
-                <input type="file" placeholder='sube la foto del sitio' onChange={handleFileChange} />
-                <textarea name="" id="" placeholder='descripcion del sitio' onChange={(e) => setDesc(e.target.value)} ></textarea>
-                <button>Subir</button>
+                <input className='formElm' type="text" placeholder='titulo' onChange={(e) => setTitle(e.target.value)}/>
+                <label htmlFor="uploadFile" id='uploadBtn'>Subir Imagen</label>
+                <input className="formElm" id='uploadFile' type="file" placeholder='sube la foto del sitio' onChange={handleFileChange} />
+                <textarea className='formElm' name="" id="" placeholder='descripcion del sitio' onChange={(e) => setDesc(e.target.value)} ></textarea>
+                <button >Subir</button>
             </form>
         </div>
     </div>
