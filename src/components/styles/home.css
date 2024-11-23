@@ -1,3 +1,5 @@
+
+
 #head{
     display: block;
     text-align: center;
@@ -5,11 +7,16 @@
     background-color: #f4a676;
 }
 
+#root{
+    overflow-x: hidden;
+}
+
 section{
     display: flex;
     flex-direction: column;
     margin: 0 10%;
     text-align: center;
+
 }
 
 #headImg{
@@ -25,6 +32,7 @@ section{
 .xmplPostCont{
     display: flex;
     text-align: center;
+    overflow: hidden;
 }
 
 .xmplPost{

@@ -2,6 +2,12 @@ h2{
     color: #ffffff;
 }
 
+.vh{
+    display: block;
+    height: 86vh;
+
+}
+
 .formContainer{
     display: flex;
     align-items: center;

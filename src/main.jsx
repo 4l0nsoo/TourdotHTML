@@ -7,6 +7,7 @@ import Error from './components/Error.jsx'
 import Login from './components/loginForm.jsx'
 import SignUp from './components/SignUpForm.jsx'
 import CreatePost from './components/CreatePost.jsx';
+import Footer from "./components/footer.jsx";
 import {AuthProvider} from './components/hooks/UserContext'
 import ProtectedRoute from './components/hooks/ProtectedRoutes.jsx';
 import './index.css'
@@ -25,7 +26,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     
       <RouterProvider router={router}/>
-
+    <Footer></Footer>
   </StrictMode>
       </AuthProvider>
 )

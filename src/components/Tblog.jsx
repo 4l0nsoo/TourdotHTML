@@ -47,6 +47,7 @@ function Tblog() {
       <div id='bigContainer'>
         {posts.map((post) => (
           <div key={post.id} id='postContainer'>
+            <p className='postElmnt'>Post hecho por: {post.uploadedby}</p>
           <img src={post.img_url} alt={`Imagen del post: ${post.title}`} id='postImg'/>
           <div>
             <h2 className='postElmnt'>{post.title}</h2>

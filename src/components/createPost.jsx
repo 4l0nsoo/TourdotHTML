@@ -6,19 +6,22 @@ import {useAuth} from './hooks/UserContext';
 import "./styles/createPost.css"
 
 function createPost() {
-
-  // const {isLogged} = useAuth()
-  // const {session} = useAuth()
-  // const navigate = useNavigate()
-
-  // useEffect(() => {
-  //     if(!isLogged){
-  //       navigate('/login')}
-  // }, []);
+  const {session} = useAuth()
+  const navigate = useNavigate()
 
   const [title, setTitle] = useState()
   const [file, setFile] = useState()
   const [desc, setDesc] = useState()
+
+// useEffect(()=>{
+//     const debug = async () =>{
+//       const username = session.user.user_metadata.username
+//       console.log(username)
+  
+//     }
+//     debug()
+
+// })
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -43,6 +46,8 @@ function createPost() {
       return
     }
 
+    const username = session.user.user_metadata.username
+
     const fileName = `${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
     
     try {
@@ -63,7 +68,8 @@ function createPost() {
     insert({
       title:title,
       description:desc,
-      img_url:publicURL
+      img_url:publicURL,
+      uploadedby:username,
     });
 
     if (insertError) {
@@ -73,10 +79,12 @@ function createPost() {
     }
 
     alert('se enviaron correctamente los datos')
+    navigate("/blog")
 
     } catch (error) {
       console.log("ha ocurrido un error:", error)
     }
+
 
     
 
